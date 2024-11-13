@@ -1,0 +1,5 @@
+modprobe nvmet
+modprobe nvmet-rdma
+
+nvmetcli clear
+nvmetcli restore
