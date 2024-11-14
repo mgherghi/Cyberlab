@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in $(seq 1 18); do
+
+    nvme discover -t rdma -a 10.20.10.2 -s 442$i
+    nvme connect -t rdma -n nvme$i -a 10.20.10.2  -s 442$i 
+
+done
