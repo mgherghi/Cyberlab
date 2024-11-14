@@ -75,33 +75,33 @@ if [ "$hostname" == "gigabyte" ]; then
     systemctl enable sanlock wdmd 
 
     # Setup Preconfigured OVN
-    echo "Do you want to proceed? (yes/no): " 
-    read answer
-    if [[ "$answer" == "yes" ]]; then
-        # Preconfigured OVN switch networking
-        wget -O /etc/default/ovn-central https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-central.config
+    # echo "Do you want to proceed? (yes/no): " 
+    # read answer
+    # if [[ "$answer" == "yes" ]]; then
+    #     # Preconfigured OVN switch networking
+    #     wget -O /etc/default/ovn-central https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-central.config
 
-        # Run ovs-vsctl config
-        wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-run | bash
+    #     # Run ovs-vsctl config
+    #     wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-run | bash
         
-        echo "Do you want to setup OVS bridges for sriov according to /.scripts/startup/network ? (yes/no): "
-        read answer
-        if [[ "$answer" == "yes" ]]; then
-            echo "run the following 2 commands after reboot in this specific order to setup OVS (You still need to setup tags on eth interfaces using ovs-vsctl)"
-            echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_bridge_and_bond | bash"
-            echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_representor | bash"
-        else
-            echo "Please setup ovs bridges in order to make use of SD-WAN"
-        fi
+    #     echo "Do you want to setup OVS bridges for sriov according to /.scripts/startup/network ? (yes/no): "
+    #     read answer
+    #     if [[ "$answer" == "yes" ]]; then
+    #         echo "run the following 2 commands after reboot in this specific order to setup OVS (You still need to setup tags on eth interfaces using ovs-vsctl)"
+    #         echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_bridge_and_bond | bash"
+    #         echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_representor | bash"
+    #     else
+    #         echo "Please setup ovs bridges in order to make use of SD-WAN"
+    #     fi
 
-        # Restart OVN services 
-        systemctl restart openvswitch-switch ovn-host ovn-central
+    #     # Restart OVN services 
+    #     systemctl restart openvswitch-switch ovn-host ovn-central
 
-        # Enable OVN on boot
-        systemctl enable ovn-host ovn-central
-    else
-        echo "Skipping OVN configuration. You are responsible for setting up yourself"
-    fi
+    #     # Enable OVN on boot
+    #     systemctl enable ovn-host ovn-central
+    # else
+    #     echo "Skipping OVN configuration. You are responsible for setting up yourself"
+    # fi
     
     # Update the kernel modules and all grub configs
     update-initramfs -u 
