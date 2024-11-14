@@ -1,0 +1,1079 @@
+{
+  "hosts": [
+    {
+      "nqn": "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232"
+    },
+    {
+      "nqn": "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6"
+    },
+    {
+      "nqn": "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+    }
+  ],
+  "ports": [
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44218",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 18,
+      "referrals": [],
+      "subsystems": [
+        "nvme18"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44217",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 17,
+      "referrals": [],
+      "subsystems": [
+        "nvme17"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44216",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 16,
+      "referrals": [],
+      "subsystems": [
+        "nvme16"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44215",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 15,
+      "referrals": [],
+      "subsystems": [
+        "nvme15"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44214",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 14,
+      "referrals": [],
+      "subsystems": [
+        "nvme14"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44213",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 13,
+      "referrals": [],
+      "subsystems": [
+        "nvme13"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44212",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 12,
+      "referrals": [],
+      "subsystems": [
+        "nvme12"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44211",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 11,
+      "referrals": [],
+      "subsystems": [
+        "nvme11"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "44210",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 10,
+      "referrals": [],
+      "subsystems": [
+        "nvme10"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4429",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 9,
+      "referrals": [],
+      "subsystems": [
+        "nvme9"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4428",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 8,
+      "referrals": [],
+      "subsystems": [
+        "nvme8"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4427",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 7,
+      "referrals": [],
+      "subsystems": [
+        "nvme7"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4426",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 6,
+      "referrals": [],
+      "subsystems": [
+        "nvme6"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4425",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 5,
+      "referrals": [],
+      "subsystems": [
+        "nvme5"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4424",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 4,
+      "referrals": [],
+      "subsystems": [
+        "nvme4"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4423",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 3,
+      "referrals": [],
+      "subsystems": [
+        "nvme3"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4422",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 2,
+      "referrals": [],
+      "subsystems": [
+        "nvme2"
+      ]
+    },
+    {
+      "addr": {
+        "adrfam": "ipv4",
+        "traddr": "10.20.10.2",
+        "treq": "not specified",
+        "trsvcid": "4421",
+        "trtype": "rdma"
+      },
+      "ana_groups": [
+        {
+          "ana": {
+            "state": "optimized"
+          },
+          "grpid": 1
+        }
+      ],
+      "param": {
+        "inline_data_size": "4096",
+        "pi_enable": "0"
+      },
+      "portid": 1,
+      "referrals": [],
+      "subsystems": [
+        "nvme1"
+      ]
+    }
+  ],
+  "subsystems": [
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "160a854fba0005e40efd",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme18n1",
+            "uuid": "569786c6-00bc-402c-8124-463a3ef9b3ab"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme18"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "424c4fdeed8c416cba41",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme17n1",
+            "uuid": "9ea0a1d2-dca9-4d53-b27d-246c166deac6"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme17"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "58fb2d6c071368533dfb",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme16n1",
+            "uuid": "0b2260d8-69c4-41bc-9b80-2380dc5b64ee"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme16"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "f0a1ca71b2a27fd8ee82",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme15n1",
+            "uuid": "5a623765-1401-47d3-b505-8508eed92db4"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme15"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "5b8ff3c2e2900a0e8914",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme14n1",
+            "uuid": "b9c0b750-55b3-493a-b8cc-6e78e14caf99"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme14"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "34654d47905c83cf4288",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme13n1",
+            "uuid": "415a62c7-bfd4-4bf8-8e65-7729c76c5787"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme13"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "e71e14dcb711c820b628",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme12n1",
+            "uuid": "44597db4-c833-4d0b-9d15-7f0c78fbb9d4"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme12"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "87009d1f630141f5d953",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme11n1",
+            "uuid": "adfc7e55-5d56-4e57-a53c-4b36bb8668ce"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme11"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "dde30933d4028cd55d0b",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme10n1",
+            "uuid": "7b2c60a9-8d12-45f9-825e-c9a4c913a57f"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme10"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "8699f5e8732574f6920e",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme9n1",
+            "uuid": "4e6b9304-47d3-4612-9033-291d60ccae98"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme9"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "9d27e4ed796d5f62a076",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme8n1",
+            "uuid": "e777daf8-783c-44da-b301-cb6d91af9c1f"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme8"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "947db5c4562976aa766d",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme7n1",
+            "uuid": "a86a1fa8-5958-4df0-ade5-61ccf8f0a535"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme7"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "9fec127c45bcfec50f74",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme6n1",
+            "uuid": "4bb9b00f-5ae5-42ee-af63-18db5f4b4bf9"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme6"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "c685bfee8d066d073ea7",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme5n1",
+            "uuid": "6a1e7271-a2c6-4b51-a279-7cc44af328a0"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme5"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "87bbbffd895c85aa3b95",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme4n1",
+            "uuid": "d04ef1a9-5995-4431-bbba-5b140c362c12"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme4"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "7e2df6184cd1c8e87eca",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme3n1",
+            "uuid": "b5784514-dcd3-4355-b707-c8ed86769d3e"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme3"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "b40ecefc3836e3e62443",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme2n1",
+            "uuid": "04f0c693-ca02-4127-921b-a78a9c6b13b4"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme2"
+    },
+    {
+      "allowed_hosts": [
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0047-3510-8046-c3c04f523232",
+        "nqn.2014-08.org.nvmexpress:uuid:00000000-0000-0000-0000-3cecef1f6ee6",
+        "nqn.2014-08.org.nvmexpress:uuid:4c4c4544-0044-3710-8054-b4c04f475831"
+      ],
+      "attr": {
+        "allow_any_host": "0",
+        "cntlid_max": "65519",
+        "cntlid_min": "1",
+        "model": "Linux",
+        "pi_enable": "0",
+        "qid_max": "128",
+        "serial": "37e353a24d432c19c5ad",
+        "version": "1.3"
+      },
+      "namespaces": [
+        {
+          "ana": {
+            "grpid": "1"
+          },
+          "ana_grpid": 1,
+          "device": {
+            "nguid": "00000000-0000-0000-0000-000000000000",
+            "path": "/dev/nvme1n1",
+            "uuid": "41f3cd15-198d-41b1-9e44-fd152fd801df"
+          },
+          "enable": 1,
+          "nsid": 1
+        }
+      ],
+      "nqn": "nvme1"
+    }
+  ]
+}
