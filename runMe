@@ -1,0 +1,121 @@
+#!/bin/bash
+
+# Get the hostname of the system
+hostname=$(hostname)
+
+# Set admin home folder
+admin="/home/mihai"
+
+# Fix Debian PATH
+echo "export PATH=/sbin:$PATH" >> $admin/.bashrc
+
+# Source the file
+source $admin/.bashrc
+
+# Check the hostname and run the appropriate command
+if [ "$hostname" == "gigabyte" ]; then
+    
+    # Install applications needed to setup
+    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) python3-configshell-fb python3-setuptools python3-pyparsing git python-six-doc -y
+
+    # Turn on passthrough IOMMU
+    sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="quiet"$/GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt"/' /etc/default/grub
+
+    # Allow NVME multipathing 
+    echo "options nvme_core multipath=Y" >> /etc/modprobe.d/nvme_core.conf
+
+    # Disable Nouveau
+    echo "blacklist nouveau" >> /etc/modprobe.d/blacklist-nouveau.conf
+    echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf
+
+    # create the directory for $admin/.scripts
+    mkdir -p $admin/.scripts 
+    mkdir -p $admin/.scripts/startup
+    
+    # Grab the Network script and save as network in $admin/.scripts/startup/
+    wget -O $admin/.scripts/startup/network https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/network_setup
+    # Add script to startup script in /sbin
+    echo "$admin/.scripts/startup/network" >> /sbin/startup
+
+    # Grab the nvmetcli script and save as nvmetcli in $admin/.scripts/startup/
+    wget -O $admin/.scripts/startup/nvmetcli https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/nvmetcli
+    # Add script to startup script in /sbin
+    echo "$admin/.scripts/startup/nvmetcli" >> /sbin/startup
+    # Setup directory for nvmet
+    mkdir -p /etc/nvmet
+    # Download nvmetcli config for RDMA
+    wget -O /etc/nvmet/config.json https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/nvme-of-rdma.json
+
+    # Grab the iopolicy script and save as iopolicy in $admin/.scripts/startup/
+    wget -O $admin/.scripts/startup/iopolicy https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/iopolicy
+    # Add script to startup script in /sbin
+    echo "$admin/.scripts/startup/iopolicy" >> /sbin/startup
+
+    # Make all startup scripts executable
+    chmod u+x $admin/.scripts/startup/*
+    chmod u+x /sbin/startup
+
+    # Add /sbin/startup to configure after 1st interface posts
+    echo "post-up /sbin/startup" >> /etc/network/interfaces
+
+    # Download nvmetcli from source and place in $admin/.github/nvmetcli
+    mkdir -p $admin/.github 
+    mkdir -p $admin/.github/nvmetcli
+    git clone git://git.infradead.org/users/hch/nvmetcli.git $admin/.github/nvmetcli/
+
+    # Install nvmetcli
+    #python3 $admin/.github/nvmetcli/setup.py build
+    #python3 $admin/.github/nvmetcli/setup.py install
+
+    # Configure lvm2_lockd for lvmCluster setup
+    sed -i 's/^[[:space:]]*# use_lvmlockd = 0$/        use_lvmlockd = 1/' /etc/lvm/lvm.conf
+    sed -i 's/^[[:space:]]*# lvmlockd_lock_retries = 3$/        lvmlockd_lock_retries = 3/' /etc/lvm/lvm.conf
+    sed -i 's/^[[:space:]]*# host_id = 0$/        host_id = 2/' /etc/lvm/lvmlocal.conf
+
+    # Enable sanlock and wdmd at boot
+    systemctl enable sanlock wdmd 
+
+    # Setup Preconfigured OVN
+    read -p "Do you want to proceed? (yes/no): " answer
+    if [[ "$answer" == "yes" ]]; then
+        # Preconfigured OVN switch networking
+        wget -O /etc/default/ovn-central https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-central.config
+
+        # Run ovs-vsctl config
+        wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-run | bash
+        
+        read -p "Do you want to setup OVS bridges for sriov according to /.scripts/startup/network ? (yes/no): " answer
+        if [[ "$answer" == "yes" ]]; then
+            echo "run the following 2 commands after reboot in this specific order to setup OVS (You still need to setup tags on eth interfaces using ovs-vsctl)"
+            echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_bridge_and_bond | bash"
+            echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_representor | bash"
+        else
+            echo "Please setup ovs bridges in order to make use of SD-WAN"
+        fi
+
+        # Restart OVN services 
+        systemctl restart openvswitch-switch ovn-host ovn-central
+
+        # Enable OVN on boot
+        systemctl enable ovn-host ovn-central
+    else
+        echo "Skipping OVN configuration. You are responsible for setting up yourself"
+    fi
+    
+    # Update the kernel modules and all grub configs
+    update-initramfs -u 
+    update-grub
+
+    echo "###################################################################"
+    echo ""
+    echo "To customize what runs at boot, please edit order of /sbin/startup"
+    echo ""
+    echo "You need to reboot if you want settings to take affect"
+    echo ""
+    echo "###################################################################"
+
+elif [ "$hostname" == "r620" ]; then
+    echo 4
+else
+    echo "Hostname does not match 'gigabyte' or 'r620'."
+fi
