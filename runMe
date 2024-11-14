@@ -115,8 +115,38 @@ if [ "$hostname" == "gigabyte" ]; then
     echo ""
     echo "###################################################################"
 
-elif [ "$hostname" == "r620" ]; then
-    echo 4
+elif [ "$hostname" == "supermicro" ]; then
+    
+    # Install needed applications
+    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) -y
+    
+    # Disable Nouveau
+    echo "blacklist nouveau" >> /etc/modprobe.d/blacklist-nouveau.conf
+    echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf
+
+    # Grab the Network script and save as network in $admin/.scripts/startup/
+    wget -O $admin/.scripts/startup/network https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/supermicro/configs/network_setup
+    # Add script to startup script in /sbin
+    echo "$admin/.scripts/startup/network" >> /sbin/startup
+
+    # Add /sbin/startup to configure after 1st interface posts
+    echo "post-up /sbin/startup" >> /etc/network/interfaces
+
+    # Make all startup scripts executable
+    chmod u+x $admin/.scripts/startup/*
+    chmod u+x /sbin/startup
+
+    # Update the kernel modules and all grub configs
+    update-initramfs -u 
+    update-grub
+
+    echo "###################################################################"
+    echo ""
+    echo "To customize what runs at boot, please edit order of /sbin/startup"
+    echo ""
+    echo "You need to reboot if you want settings to take affect"
+    echo ""
+    echo "###################################################################"
 else
     echo "Hostname does not match 'gigabyte' or 'r620'."
 fi
