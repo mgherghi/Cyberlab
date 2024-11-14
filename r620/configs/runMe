@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Set admin home folder
+admin="/home/mihai"
+
+# Fix Debian PATH
+echo "export PATH=/sbin:$PATH" >> $admin/.bashrc
+
+# Source the file
+source $admin/.bashrc
+
+# Install needed applications
+apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) qemu-system -y 
+
+# Configure lvm2_lockd for lvmCluster setup
+sed -i 's/^[[:space:]]*# use_lvmlockd = 0$/        use_lvmlockd = 1/' /etc/lvm/lvm.conf
+sed -i 's/^[[:space:]]*# host_id = 0$/        host_id = 4/' /etc/lvm/lvmlocal.conf
+
+# Enable sanlock and wdmd at boot
+systemctl enable sanlock wdmd 
+
+# Disable Nouveau
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist-nouveau.conf
+echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf
+
+# Grab the Network script and save as network in $admin/.scripts/startup/
+wget -O $admin/.scripts/startup/network https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/r620/configs/network_setup
+# Add script to startup script in /sbin
+echo "$admin/.scripts/startup/network" >> /sbin/startup
+
+# Add /sbin/startup to configure after 1st interface posts
+echo "post-up /sbin/startup" >> /etc/network/interfaces
+
+# Make all startup scripts executable
+chmod u+x $admin/.scripts/startup/*
+chmod u+x /sbin/startup
+
+# Preconfigured OVN switch networking
+wget -O /etc/default/ovn-central  https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/r620/configs/ovn-central.config
+
+# Run ovs-vsctl config
+wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/r620/configs/ovn-run | bash
+
+# Grab the nvme-connect script to connect to NVME
+wget -O $admin/.scripts/nvme-connect https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/nvme-connect
+
+# Update the kernel modules and all grub configs
+update-initramfs -u 
+update-grub
+
+echo "###################################################################"
+echo ""
+echo "To customize what runs at boot, please edit order of /sbin/startup"
+echo ""
+echo "You need to reboot if you want settings to take affect"
+echo ""
+echo "###################################################################"
