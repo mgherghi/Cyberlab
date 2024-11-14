@@ -25,7 +25,7 @@ ethtool -K enp65s0f0np0 hw-tc-offload on
 ethtool -K mlnx_vf-bond hw-tc-offload on
 
 # Setup VF's on enp65s0f0np0
-echo 10 > /sys/bus/pci/devices/0000\:41\:00.0/sriov_numvfs
+echo 11 > /sys/bus/pci/devices/0000\:41\:00.0/sriov_numvfs
 
 # Setup VF's on enp65s0f1np1
 #echo 10 > /sys/bus/pci/devices/0000\:41\:00.1/sriov_numvfs
