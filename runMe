@@ -136,6 +136,9 @@ elif [ "$hostname" == "supermicro" ]; then
     chmod u+x $admin/.scripts/startup/*
     chmod u+x /sbin/startup
 
+    # Grab the nvme-connect script to connect to NVME
+    wget -O $admin/.scripts/nvme-connect https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/nvme-connect
+
     # Update the kernel modules and all grub configs
     update-initramfs -u 
     update-grub
