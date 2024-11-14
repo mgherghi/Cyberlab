@@ -69,14 +69,14 @@ if [ "$hostname" == "gigabyte" ]; then
 
     # Configure lvm2_lockd for lvmCluster setup
     sed -i 's/^[[:space:]]*# use_lvmlockd = 0$/        use_lvmlockd = 1/' /etc/lvm/lvm.conf
-    sed -i 's/^[[:space:]]*# lvmlockd_lock_retries = 3$/        lvmlockd_lock_retries = 3/' /etc/lvm/lvm.conf
     sed -i 's/^[[:space:]]*# host_id = 0$/        host_id = 2/' /etc/lvm/lvmlocal.conf
 
     # Enable sanlock and wdmd at boot
     systemctl enable sanlock wdmd 
 
     # Setup Preconfigured OVN
-    read -p "Do you want to proceed? (yes/no): " answer
+    echo "Do you want to proceed? (yes/no): " 
+    read answer
     if [[ "$answer" == "yes" ]]; then
         # Preconfigured OVN switch networking
         wget -O /etc/default/ovn-central https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-central.config
@@ -84,7 +84,8 @@ if [ "$hostname" == "gigabyte" ]; then
         # Run ovs-vsctl config
         wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-run | bash
         
-        read -p "Do you want to setup OVS bridges for sriov according to /.scripts/startup/network ? (yes/no): " answer
+        echo "Do you want to setup OVS bridges for sriov according to /.scripts/startup/network ? (yes/no): "
+        read answer
         if [[ "$answer" == "yes" ]]; then
             echo "run the following 2 commands after reboot in this specific order to setup OVS (You still need to setup tags on eth interfaces using ovs-vsctl)"
             echo "wget -qO- https://raw.githubusercontent.com/mgherghi/Cyberlab/refs/heads/main/gigabyte/configs/ovn-add_bridge_and_bond | bash"
