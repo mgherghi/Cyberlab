@@ -1,0 +1,4 @@
+ovs-vsctl set open_vswitch . \
+   external_ids:ovn-remote=tcp:10.30.10.2:6642,tcp:10.30.10.3:6642,tcp:10.30.10.4:6642 \
+   external_ids:ovn-encap-type=geneve \
+   external_ids:ovn-encap-ip=10.30.10.2
