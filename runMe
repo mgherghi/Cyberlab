@@ -16,7 +16,7 @@ source $admin/.bashrc
 if [ "$hostname" == "gigabyte" ]; then
     
     # Install applications needed to setup
-    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) python3-configshell-fb python3-setuptools python3-pyparsing git python-six-doc -y
+    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) qemu-system python3-configshell-fb python3-setuptools python3-pyparsing git python-six-doc -y
 
     # Turn on passthrough IOMMU
     sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="quiet"$/GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt"/' /etc/default/grub
@@ -118,7 +118,7 @@ if [ "$hostname" == "gigabyte" ]; then
 elif [ "$hostname" == "supermicro" ]; then
     
     # Install needed applications
-    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) -y
+    apt install nvme-cli ovn-host ovn-central curl lvm2 debhelper lvm2-lockd sanlock build-essential linux-headers-$(uname -r) qemu-system -y
     
     # Disable Nouveau
     echo "blacklist nouveau" >> /etc/modprobe.d/blacklist-nouveau.conf
